@@ -1,0 +1,233 @@
+
+
+.heading {
+  text-align: center;
+}
+
+button,
+.button {
+  position: relative;
+  display: inline-block;
+  color: white;
+  padding: 0.75rem 2rem;
+  margin: 0 auto;
+  background-color: #374d72;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+button:hover,
+.button:hover {
+  background-color: #374d72;
+}
+button:hover:before, button:hover:after,
+.button:hover:before,
+.button:hover:after {
+  color: #4cc4cf;
+}
+button:after, button:before,
+.button:after,
+.button:before {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* ---------------------- Vertical Tabs */
+.tabs {
+  position: relative;
+  min-height: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  /* ---------------------- Tab */
+  /* ---------------------- Content */
+}
+.tabs .tab {
+  margin-bottom: 15px;
+  /* ---------------------- Tab Toggle */
+}
+@media screen and (min-width: 55rem) {
+  .tabs .tab {
+    /*float: left;*/
+    clear: left;
+    width: 30%;
+  }
+}
+.tabs .tab .tab-toggle {
+  padding: 1rem 4rem 1rem 2rem;
+  position: relative;
+  outline: none;
+  width: 100%;
+}
+@media screen and (min-width: 55rem) {
+  .tabs .tab .tab-toggle {
+    text-align: left;
+  }
+}
+.tabs .tab .tab-toggle:after {
+  content: "\25BC";
+  position: absolute;
+  display: block;
+  right: 2rem;
+  top: 50%;
+  -webkit-transform: rotate(0deg) translateY(-50%);
+  -moz-transform: rotate(0deg) translateY(-50%);
+  -ms-transform: rotate(0deg) translateY(-50%);
+  -o-transform: rotate(0deg) translateY(-50%);
+  transform: rotate(0deg) translateY(-50%);
+}
+@media screen and (min-width: 55rem) {
+  .tabs .tab .tab-toggle:after {
+    -webkit-transform: rotate(-90deg) translateX(50%);
+    -moz-transform: rotate(-90deg) translateX(50%);
+    -ms-transform: rotate(-90deg) translateX(50%);
+    -o-transform: rotate(-90deg) translateX(50%);
+    transform: rotate(-90deg) translateX(50%);
+  }
+}
+.tabs .tab .tab-toggle.active {
+  color: #8099c2;
+  background-color: white;
+  cursor: default;
+}
+.tabs .tab .tab-toggle.active:after {
+  color: #8099c2;
+  -webkit-transform: rotate(180deg) translateY(50%);
+  -moz-transform: rotate(180deg) translateY(50%);
+  -ms-transform: rotate(180deg) translateY(50%);
+  -o-transform: rotate(180deg) translateY(50%);
+  transform: rotate(180deg) translateY(50%);
+}
+@media screen and (min-width: 55rem) {
+  .tabs .tab .tab-toggle.active:after {
+    -webkit-transform: rotate(-90deg) translateX(50%) translateY(0);
+    -moz-transform: rotate(-90deg) translateX(50%) translateY(0);
+    -ms-transform: rotate(-90deg) translateX(50%) translateY(0);
+    -o-transform: rotate(-90deg) translateX(50%) translateY(0);
+    transform: rotate(-90deg) translateX(50%) translateY(0);
+    right: 1rem;
+  }
+}
+.tabs .content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 2rem;
+  background-color: #efefef;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+@media screen and (min-width: 55rem) {
+  .tabs .content {
+    max-height: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%;
+    opacity: 0;
+    padding: 0rem 2rem 2rem 2rem;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+.tabs .content.active {
+  max-height: 1000px;
+}
+@media screen and (min-width: 55rem) {
+  .tabs .content.active {
+    max-height: none;
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+}
+.tabs .content > .heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+/* SEARCH */
+
+fieldset {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 40px;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+input,
+button {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+
+input {
+  color: #666;
+  z-index: 2;
+  border: 0 none;
+}
+input:focus {
+  outline: 0 none;
+}
+input:focus + button {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+input:focus + button .fa {
+  -webkit-transform: translate(0px, 0);
+      -ms-transform: translate(0px, 0);
+          transform: translate(0px, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  color: #fff;
+}
+
+button {
+  z-index: 1;
+  width: 50px;
+  border: 0 none;
+  background: #ceb980;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;  
+  -webkit-transform: translate(-50px, 0);
+      -ms-transform: translate(-50px, 0);
+          transform: translate(-50px, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.fa-search {
+  font-size: 1.4rem;
+  color: #29abe2;
+  z-index: 3;
+  top: 25%;
+  -webkit-transform: translate(-190px, 0);
+      -ms-transform: translate(-190px, 0);
+          transform: translate(-190px, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
+}
